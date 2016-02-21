@@ -10,7 +10,7 @@
 BUILDFLAG=$(ENVIRON)\buildflag
 IFACE_EXE="$(XLW)\xlw\build\$(VC)\$(ENVIRON)\InterfaceGenerator.exe"
 
-IFACE_INPUT=source\cppinterface.h
+IFACE_INPUT=source\QuantXLL.h
 IFACE_OUTPUT=source\xlwWrapper.cpp
 
 #IFACE_INPUT2=source\header2.h

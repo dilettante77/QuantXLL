@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>fix8.dependencies.gtest</id>
+    <version>1.7.20151130.1</version>
+    <title>FIX8 GTest dependency</title>
+    <authors>Google Inc</authors>
+    <owners>Google Inc</owners>
+    <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+    <projectUrl>https://code.google.com/p/googletest/</projectUrl>
+    <iconUrl>http://opensource.org/licenses/BSD-3-Clause</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>GTest for Windows</description>
+    <summary>Prebuilt GTest static library for FIX8 build</summary>
+    <releaseNotes />
+    <copyright>Copyright 2014</copyright>
+    <tags>GTEST native CoApp nativepackage</tags>
+  </metadata>
+</package>

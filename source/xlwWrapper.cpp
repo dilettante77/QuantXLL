@@ -6,7 +6,7 @@
 
 #include "xlw/MyContainers.h"
 #include <xlw/CellMatrix.h>
-#include "cppinterface.h"
+#include "QuantXLL.h"
 #include <xlw/xlw.h>
 #include <xlw/XlFunctionRegistration.h>
 #include <stdexcept>
@@ -67,6 +67,120 @@ short x(
 short result(
 	EchoShort(
 		x)
+	);
+return XlfOper(result);
+EXCEL_END
+}
+}
+
+
+
+//////////////////////////
+
+namespace
+{
+XLRegistration::Arg
+EchoStringArgs[]=
+{
+{ "x"," string to be echoed ","XLF_OPER"}
+};
+  XLRegistration::XLFunctionRegistrationHelper
+registerEchoString("xlEchoString",
+"EchoString",
+" echoes a string ",
+LibraryName,
+EchoStringArgs,
+1
+,false
+,false
+,""
+,""
+,false
+,false
+,false
+);
+}
+
+
+
+extern "C"
+{
+LPXLFOPER EXCEL_EXPORT
+xlEchoString(
+LPXLFOPER xa)
+{
+EXCEL_BEGIN;
+
+	if (XlfExcel::Instance().IsCalledByFuncWiz())
+		return XlfOper(true);
+
+XlfOper xb(
+	(xa));
+std::string x(
+	xb.AsString("x"));
+
+std::string result(
+	EchoString(
+		x)
+	);
+return XlfOper(result);
+EXCEL_END
+}
+}
+
+
+
+//////////////////////////
+
+namespace
+{
+XLRegistration::Arg
+mysumArgs[]=
+{
+{ "a","too lazy to comment this one ","B"},
+{ "b","too lazy to comment this one ","B"}
+};
+  XLRegistration::XLFunctionRegistrationHelper
+registermysum("xlmysum",
+"mysum",
+"too lazy to comment this function ",
+LibraryName,
+mysumArgs,
+2
+,false
+,false
+,""
+,""
+,false
+,false
+,false
+);
+}
+
+
+
+extern "C"
+{
+LPXLFOPER EXCEL_EXPORT
+xlmysum(
+double aa,
+double ba)
+{
+EXCEL_BEGIN;
+
+	if (XlfExcel::Instance().IsCalledByFuncWiz())
+		return XlfOper(true);
+
+int a(
+	static_cast<int>(aa));
+
+int b(
+	static_cast<int>(ba));
+
+int result(
+	mysum(
+		a,
+		b)
 	);
 return XlfOper(result);
 EXCEL_END

@@ -1,0 +1,17 @@
+QuantXLL.vcxproj
+*.sdf
+*.opensdf
+*.xll
+*.log
+*.exp
+*.tlog
+*.obj
+*.pdb
+*.lib
+*.idb
+*.ilk
+*.exe
+*.cache
+*.suo
+*.suo
+*.filters
